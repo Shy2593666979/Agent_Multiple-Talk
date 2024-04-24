@@ -34,8 +34,8 @@ def load_all_scene_configs(chatId):
     # 搜索目录下的所有json文件
     #for file_path in glob.glob("function/scene_config/sceme_templates.json", recursive=True):
     # file_path = "/model/tmg0011285/4.12/LT-Agent/scene_config/scene_templates.json"
-    original_path = "/model/tmg0011285/LT-Agent/Agent_data/first_important.json"
-    file_path = f"/model/tmg0011285/LT-Agent/Agent_data/{chatId}.json"
+    original_path = "./Agent_data/first_important.json"
+    file_path = f"./Agent_data/{chatId}.json"
     if not os.path.exists(file_path):
         # 读取original_path中json的内容
         with open(original_path, 'r', encoding='utf-8') as original_file:
@@ -67,14 +67,14 @@ def send_message(prompt, user_input):
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer sk-ChtJNYJD1sm5FqwA7bE8EfFa3eE847Fa9758E5626d64Cc9a"
+        "Authorization": "-------------"
     }
     data = {
         "model": "Qwen1.5-72b-chat",
         "messages": [{"role": "user", "content": prompt}]
     }
 
-    response = requests.post("http://70.182.56.16:11000/v1/chat/completions", data=json.dumps(data),
+    response = requests.post("model.url", data=json.dumps(data),
                              headers=headers).content
     print(response)
 
@@ -149,7 +149,7 @@ def update_slot(json_data, dict_target):
 
 # 在json文件也及时更新
 def update_agent_json(scene_name,slot,chatId):
-    file_path = f"/model/tmg0011285/LT-Agent/Agent_data/{chatId}.json"
+    file_path = f"./Agent_data/{chatId}.json"
     with open(file_path,'r', encoding='utf-8') as file:
         data = json.load(file)
 
@@ -162,7 +162,7 @@ def update_agent_json(scene_name,slot,chatId):
 
 # 清空对应的json文件
 def clear_agent_json(scene_name,chatId):
-    file_path = f"/model/tmg0011285/LT-Agent/Agent_data/{chatId}.json"
+    file_path = f"./Agent_data/{chatId}.json"
     with open(file_path,'r', encoding='utf-8') as file:
         data = json.load(file)
 
@@ -178,7 +178,7 @@ def clean_slot_json(slot):
 
 
 def update_agent_current_scene(current_scene,chatId):
-    file_path = f"/model/tmg0011285/LT-Agent/Agent_data/current_scene.json"
+    file_path = f"./Agent_data/current_scene.json"
     with open(file_path,'r',encoding='utf-8') as file:
         data = json.load(file)
     
@@ -188,7 +188,7 @@ def update_agent_current_scene(current_scene,chatId):
         json.dump(data, file, ensure_ascii=False, indent=4)
 
 def get_agent_current_scene(chatId):
-    file_path = f"/model/tmg0011285/LT-Agent/Agent_data/current_scene.json"
+    file_path = f"./Agent_data/current_scene.json"
     with open(file_path,'r',encoding='utf-8') as file:
         data = json.load(file)
     
