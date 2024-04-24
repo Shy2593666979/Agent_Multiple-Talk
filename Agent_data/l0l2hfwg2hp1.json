@@ -1,0 +1,68 @@
+{
+    "apply_package": {
+        "name": "办理套餐",
+        "description": "办理套餐服务",
+        "parameters": [
+            {
+                "name": "姓名",
+                "desc": "办理套餐的持有人姓名",
+                "type": "string",
+                "value": ""
+            },
+            {
+                "name": "电话号码",
+                "desc": "办理套餐的电话号码",
+                "type": "string",
+                "value": ""
+            },
+            {
+                "name": "身份证号",
+                "desc": "办理套餐的身份证号",
+                "type": "string",
+                "value": ""
+            },
+            {
+                "name": "套餐类型",
+                "desc": "办理套餐的套餐类型，有39元、59元、99元套餐",
+                "type": "string",
+                "value": ""
+            }
+        ]
+    },
+    "apply_leave": {
+        "name": "请假申请",
+        "description": "帮助用户自动实现请假流程",
+        "parameters": [
+            {
+                "name": "主管",
+                "desc": "用户主管的姓名",
+                "type": "string",
+                "value": "任中涛"
+            },
+            {
+                "name": "申请理由",
+                "desc": "用户请假的申请理由，申请原因",
+                "type": "string",
+                "value": "个人事务需要处理"
+            },
+            {
+                "name": "请假类别",
+                "desc": "用户请假的类别，例如：病假、事假、休假、婚假等",
+                "type": "string",
+                "value": "病假"
+            },
+            {
+                "name": "开始时间",
+                "desc": "用户请假的开始日期,格式：YYYY-MM-DD hh:mm",
+                "type": "string",
+                "value": "2024-04-19 00:00"
+            },
+            {
+                "name": "结束时间",
+                "desc": "用户请假的结束日期,格式：YYYY-MM-DD hh:mm",
+                "type": "string",
+                "value": "2024-04-21 23:59"
+            }
+        ]
+    }
+}
