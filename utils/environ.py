@@ -1,18 +1,19 @@
 import os
 import config
 
+# 根据环境进行修改，大部分情况不需要有这些
 def set_proxy_environ():
 
-    os.environ['http_proxy']="http://192.168.102.51:8080"
+    os.environ['http_proxy']="http://127.0.0.1:8080"
 
-    os.environ['https_proxy']="http://192.168.102.51:8080"
+    os.environ['https_proxy']="http://127.0.0.1:8080"
 
-    os.environ['REQUESTS_CA_BUNDLE']="/home/z00013696/Xfusion_Rootcert.crt"
+    os.environ['REQUESTS_CA_BUNDLE']="xxxxxxxxxxxxxxxxxxxxxxxxxxx.crt"
 
 def set_Google_environ():
-    os.environ['http_proxy']="http://192.168.102.51:8070"
+    os.environ['http_proxy']="http://127.0.0.1:8070"
 
-    os.environ['https_proxy']="http://192.168.102.51:8070"
+    os.environ['https_proxy']="http://127.0.0.1:8070"
 
     os.environ['REQUESTS_CA_BUNDLE']= ''
 
