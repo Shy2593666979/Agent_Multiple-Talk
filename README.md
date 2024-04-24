@@ -21,6 +21,9 @@
 - **存储**：使用JSON或类似格式的文件来存储`Agent_data`。
 
 ### 注意 👋
-- Agent_data 数据基于FastGPT中的chatId命名的，保证窗口与窗口之间、用户与用户之间Agent互不干扰。
+- `Agent_data` 数据基于FastGPT中的chatId命名的，保证窗口与窗口之间、用户与用户之间Agent互不干扰。
+- `agent`文件中很多都是直接调用API，例如`Google`、`Gaode Weather`。 `apply_for_package`、`apply_leave`是自定义的Agent。
+- 通过加载`scene_templates.json`文件中的Tools让大模型自己挑选，所以根据所需更改json文件数据。
+- `config`文件中存放着各种API的KEY，可自行添加。
 
 ⭐ ⭐ ⭐
